@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Customer</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+      </tr>
+
+      {% import datetime %}
+
+      {% for customer in data.elements %}
+        <tr>
+          <td><a href={{customer.href}}>{{ customer.id }}</a></td>
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.customerSince }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+    <a href="customer/new">Create Customer</a>
+
+
+
+
+  </body>
+</html>
